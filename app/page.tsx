@@ -1,6 +1,5 @@
 import AuthButton from "../components/AuthButton";
 import { createClient } from "@/utils/supabase/server";
-//plug
 
 export default async function Index() {
   const canInitSupabaseClient = () => {
