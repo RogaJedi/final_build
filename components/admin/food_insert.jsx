@@ -6,10 +6,10 @@ export default function InsertADM() {
   const supabase = createClient();
 
   const [name, setName] = useState('');
-  const [calories, setCalories] = useState(0);
-  const [protein, setProtein] = useState(0);
-  const [carbs, setCarbs] = useState(0);
-  const [fats, setFats] = useState(0);
+  const [calories, setCalories] = useState('');
+  const [protein, setProtein] = useState('');
+  const [carbs, setCarbs] = useState('');
+  const [fats, setFats] = useState('');
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -26,12 +26,11 @@ export default function InsertADM() {
       }
       // Reset form fields after successful submission
       setName('');
-      setCalories(0);
-      setProtein(0);
-      setCarbs(0);
-      setFats(0);
+      setCalories('');
+      setProtein('');
+      setCarbs('');
+      setFats('');
       console.log('New food option added:', data);
-      window.location.reload();
     } catch (error) {
       console.error('Error adding new food option:', error.message);
     }
