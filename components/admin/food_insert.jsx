@@ -31,6 +31,7 @@ export default function InsertADM() {
       setCarbs('');
       setFats('');
       console.log('New food option added:', data);
+      window.location.reload();
     } catch (error) {
       console.error('Error adding new food option:', error.message);
     }
