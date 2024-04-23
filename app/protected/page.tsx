@@ -45,7 +45,7 @@ export default async function ProtectedPage() {
           </div>
 
 
-          <div className="animate-in text-6xl flex-1 flex flex-row gap-20 opacity-0 max-w-4xl px-3">
+          <div className="animate-in sm:text-3xl lg:text-6xl flex-1 flex flex-row gap-20 opacity-0 max-w-4xl px-3">
             Ваш прогресс на сегодня:
           </div>
 
