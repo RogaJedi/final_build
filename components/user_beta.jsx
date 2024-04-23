@@ -64,7 +64,7 @@ export default function ProgressTracker() {
   const progressData = calculateProgress();
 
   return (
-    <div className="flex flex-row space-x-4 text-4xl">
+    <div className="flex flex-row space-x-4 sm:text-2xl lg:text-4xl">
       <div classname="flex-col">
         <div className="text-[#87ff00] text-center mb-4">
           Калории
