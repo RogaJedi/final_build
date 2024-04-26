@@ -64,9 +64,9 @@ export default function ProgressTracker() {
   const progressData = calculateProgress();
 
   return (
-    <div className="flex flex-row space-x-4 text-4xl">
+    <div className="flex flex-row space-x-4">
       <div classname="flex-col">
-        <div className="text-[#87ff00] text-center mb-4">
+        <div className="text-[#87ff00] text-center sm:text-sm lg:text-4xl mb-4">
           Калории
         </div>
         <div>
@@ -80,13 +80,13 @@ export default function ProgressTracker() {
               trailColor: '#2A2A2A',
               })}/>
         </div>
-        <div className="text-[#87ff00] text-2xl text-center mb-4">
+        <div className="text-[#87ff00] sm:text-sm lg:text-4xl text-center mb-4">
           {progressData.consumedCalories}/2250ккал
         </div>
       </div>
       
       <div classname="flex-col">
-        <div className="text-[#0092ff] text-center mb-4">
+        <div className="text-[#0092ff] sm:text-sm lg:text-4xl text-center mb-4">
           Белки
         </div>
         <div>
@@ -100,13 +100,13 @@ export default function ProgressTracker() {
               trailColor: '#2A2A2A',
               })}/>
         </div>
-        <div className="text-[#0092ff] text-2xl text-center mb-4">
+        <div className="text-[#0092ff] sm:text-sm lg:text-4xl text-center mb-4">
           {progressData.consumedProtein}/500г
         </div>
       </div>
       
       <div classname="flex-col">
-        <div className="text-[#ff0096] text-center mb-4">
+        <div className="text-[#ff0096] sm:text-sm lg:text-4xl text-center mb-4">
           Углеводы
         </div>
         <div>
@@ -120,13 +120,13 @@ export default function ProgressTracker() {
               trailColor: '#2A2A2A',
               })}/>
         </div>
-        <div className="text-[#ff0096] text-2xl text-center mb-4">
+        <div className="text-[#ff0096] sm:text-sm lg:text-4xl text-center mb-4">
           {progressData.consumedCarbs}/280г
         </div>
       </div>
       
       <div classname="flex-col">
-        <div className="text-[#FFC000] text-center mb-4">
+        <div className="text-[#FFC000] sm:text-sm lg:text-4xl text-center mb-4">
           Жиры
         </div>
         <div>
@@ -140,7 +140,7 @@ export default function ProgressTracker() {
               trailColor: '#2A2A2A',
               })}/>
         </div>
-        <div className="text-[#FFC000] text-2xl text-center mb-4">
+        <div className="text-[#FFC000] sm:text-sm lg:text-4xl text-center mb-4">
           {progressData.consumedFat}/60г
         </div>
       </div>
