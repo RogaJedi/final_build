@@ -1,9 +1,7 @@
 import AuthButton from "@/components/AuthButton";
 import { createClient } from "@/utils/supabase/server";
 import { redirect } from "next/navigation";
-import FoodSelector from "@/components/user_select"
-import ProgressTracker from "@/components/user_beta"
-import GoalsButton from "@/components/GoalsButton";
+import ProfileButton from "@/components/ProfileButton"
 
 
 export default async function ProtectedPage() {
@@ -30,35 +28,18 @@ export default async function ProtectedPage() {
           <div className="w-full">
             <nav className="w-full flex justify-center border-b border-b-foreground/10 h-16">
               <div className="w-full max-w-4xl flex justify-between items-center p-3 text-sm">
-                <GoalsButton/>
-                <AuthButton />
+                <ProfileButton/>
               </div>
             </nav>
           </div>
 
 
           <div className="animate-in text-6xl flex-1 flex flex-row gap-20 opacity-0 max-w-4xl px-3">
-            В день в среднем рекомендуестся съедать:
-            2250 Калорий<br />
-            500г Протеина<br />
-            280г Углеводов<br />
-            60г Жиров
+            Привет, мир!
           </div>
 
 
-          <div className="animate-in text-6xl flex-1 flex flex-row gap-20 opacity-0 max-w-4xl px-3">
-            Ваш прогресс на сегодня:
-          </div>
 
-
-          <div className="animate-in text-2xl flex-1 flex flex-row gap-20 opacity-0 max-w-4xl px-3">
-            <ProgressTracker/>
-          </div>
-
-
-          <div className="animate-in flex-1 flex flex-row gap-20 opacity-0 max-w-2xl px-3">
-            <FoodSelector />
-          </div>
 
 
         </div>
