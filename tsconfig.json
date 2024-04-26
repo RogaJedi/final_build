@@ -23,6 +23,6 @@
       "@/*": ["./*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "components/admin/food_insert.jsx", "app/admin/page.jsx", "components/UserButton.jsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "components/admin/food_insert.jsx", "app/admin/page.jsx", "components/UserButton.jsx", "app/page.jsx"],
   "exclude": ["node_modules"]
 }

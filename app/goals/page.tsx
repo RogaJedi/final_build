@@ -1,7 +1,7 @@
-import AuthButton from "@/components/AuthButton";
 import { createClient } from "@/utils/supabase/server";
 import { redirect } from "next/navigation";
 import ProfileButton from "@/components/ProfileButton"
+import UpdateGoals from "@/components/user_goals"
 
 
 export default async function ProtectedPage() {
@@ -34,7 +34,12 @@ export default async function ProtectedPage() {
           </div>
 
           <div className="animate-in text-6xl flex-1 flex flex-row gap-20 opacity-0 max-w-4xl px-3">
-            Привет, мир!
+            Ваши цели:
+          </div>
+
+          <div className="animate-in text-6xl flex-1 flex flex-row gap-20 opacity-0 max-w-4xl px-3">
+            Настройте цели для вашей диеты
+            <UpdateGoals/>
           </div>
 
 

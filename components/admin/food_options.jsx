@@ -38,7 +38,7 @@ export default function FoodADM() {
   };
 
   return (
-    <div className="space-x-3">
+    <div className="space-x-3 flex flex-row justify-center">
 
 
       <select value={selectedFood} onChange={handleSelectionChange} className="appearance-auto rounded-md px-4 py-3 bg-inherit border mb-6">
@@ -47,7 +47,7 @@ export default function FoodADM() {
           <option key={index} value={option.name} className="bg-black">{option.name}</option>
         ))}
       </select>
-      <button onClick={handleDelete} disabled={!selectedFood} className="bg-red-600 rounded-md px-4 py-2.5 text-foreground mb-2">Удалить</button>
+      <button onClick={handleDelete} disabled={!selectedFood} className="bg-red-600 rounded-md px-4 py-3 text-foreground mb-2">Удалить</button>
 
 
     </div>
