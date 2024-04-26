@@ -24,14 +24,14 @@ export default async function ProtectedPage() {
 
           <div className="w-full">
             <nav className="w-full flex justify-center border-b border-b-foreground/10 h-16">
-              <div className="w-full max-w-4xl flex justify-between items-center p-3 text-sm">
+              <div className="w-full max-w-4xl flex justify-center p-3 text-sm">
                 <AuthButton />
               </div>
             </nav>
           </div>
 
 
-          <div className="animate-in text-xl flex-1 flex flex-col border-b border-b-foreground/10 gap-10 opacity-0 max-w-4xl px-3">
+          <div className="animate-in text-xl flex-1 flex flex-col justify-center items-center border-b border-b-foreground/10 gap-10 opacity-0 px-3">
             Удаление блюда
             <FoodADM/>
           </div>
@@ -42,17 +42,7 @@ export default async function ProtectedPage() {
             <InsertADM/>
           </div>
 
-
-          <div className="animate-in text-2xl flex-1 flex flex-row gap-20 opacity-0 max-w-4xl px-3">
-
-          </div>
-
-
-          <div className="animate-in flex-1 flex flex-row gap-20 opacity-0 max-w-2xl px-3">
-
-          </div>
-
-
+          
         </div>
       </div>
     </>

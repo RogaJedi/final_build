@@ -80,7 +80,7 @@ export default function ProgressTracker() {
               trailColor: '#2A2A2A',
               })}/>
         </div>
-        <div className="text-[#87ff00] sm:text-sm lg:text-4xl text-center mb-4">
+        <div className="text-[#87ff00] sm:text-sm lg:text-2xl text-center mb-4">
           {progressData.consumedCalories}/2250ккал
         </div>
       </div>
@@ -100,7 +100,7 @@ export default function ProgressTracker() {
               trailColor: '#2A2A2A',
               })}/>
         </div>
-        <div className="text-[#0092ff] sm:text-sm lg:text-4xl text-center mb-4">
+        <div className="text-[#0092ff] sm:text-sm lg:text-2xl text-center mb-4">
           {progressData.consumedProtein}/500г
         </div>
       </div>
@@ -120,7 +120,7 @@ export default function ProgressTracker() {
               trailColor: '#2A2A2A',
               })}/>
         </div>
-        <div className="text-[#ff0096] sm:text-sm lg:text-4xl text-center mb-4">
+        <div className="text-[#ff0096] sm:text-sm lg:text-2xl text-center mb-4">
           {progressData.consumedCarbs}/280г
         </div>
       </div>
@@ -140,7 +140,7 @@ export default function ProgressTracker() {
               trailColor: '#2A2A2A',
               })}/>
         </div>
-        <div className="text-[#FFC000] sm:text-sm lg:text-4xl text-center mb-4">
+        <div className="text-[#FFC000] sm:text-sm lg:text-2xl text-center mb-4">
           {progressData.consumedFat}/60г
         </div>
       </div>

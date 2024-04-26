@@ -27,12 +27,11 @@ export default async function ProtectedPage() {
 
           <div className="w-full">
             <nav className="w-full flex justify-center border-b border-b-foreground/10 h-16">
-              <div className="w-full max-w-4xl flex justify-between items-center p-3 text-sm">
+              <div className="w-full max-w-4xl flex justify-center p-3 text-sm">
                 <ProfileButton/>
               </div>
             </nav>
           </div>
-
 
           <div className="animate-in text-6xl flex-1 flex flex-row gap-20 opacity-0 max-w-4xl px-3">
             Привет, мир!
