@@ -38,10 +38,10 @@ export default function FoodADM() {
   };
 
   return (
-    <div className="space-x-3 flex flex-row justify-center">
+    <div className="flex-1 flex flex-col w-full justify-center">
 
 
-      <select value={selectedFood} onChange={handleSelectionChange} className="appearance-auto rounded-md px-4 py-3 bg-inherit border mb-6">
+      <select value={selectedFood} onChange={handleSelectionChange} className="appearance-auto rounded-md px-4 py-3 bg-inherit border mb-3">
         <option value="" className="bg-black ">Выберите блюдо</option>
         {foodOptions.map((option, index) => (
           <option key={index} value={option.name} className="bg-black">{option.name}</option>
