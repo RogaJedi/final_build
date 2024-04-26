@@ -3,7 +3,7 @@ import { redirect } from "next/navigation";
 
 export default async function ProfileButton() {
   const toProfile = async () => {
-    return redirect("/protected");
+    return redirect("/profile");
   };
 
   return (
