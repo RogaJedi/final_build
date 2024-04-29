@@ -39,6 +39,7 @@ export default async function ProtectedPage() {
 
           <div className="animate-in text-6xl flex-1 flex flex-row gap-20 opacity-0 max-w-4xl px-3">
             Настройте цели для вашей диеты
+            <UpdateGoals/>
           </div>
 
 

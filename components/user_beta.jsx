@@ -8,6 +8,7 @@ export default function ProgressTracker() {
   const supabase = createClient();
 
   const [userStats, setUserStats] = useState(null);
+  const [userGoals, setUserGoals] = useState(0);
 
   useEffect(() => {
     async function fetchUserStats() {
@@ -28,8 +29,26 @@ export default function ProgressTracker() {
       if (error) console.error('Error fetching user stats:', error);
       else setUserStats(data);
     }
+
+    async function fetchUserGoals() {
+      const {
+        data: { user },
+      } = await supabase.auth.getUser();
+
+      const { goaldata, error } = await supabase
+        .from('user_goals')
+        .select('*')
+        .eq('user_id', user.id);
+
+      if (error) console.error('Error fetching user stats:', error);
+      else{
+        console.log(goaldata)
+        setUserGoals(goaldata);
+      }
+    }
     
     fetchUserStats();
+    fetchUserGoals();
   }, []);
 
   
@@ -81,7 +100,7 @@ export default function ProgressTracker() {
               })}/>
         </div>
         <div className="text-[#87ff00] sm:text-sm lg:text-2xl text-center mb-4">
-          {progressData.consumedCalories}/2250ккал
+          {progressData.consumedCalories}/{progressData.CaloriesGoal}ккал
         </div>
       </div>
       
@@ -101,7 +120,7 @@ export default function ProgressTracker() {
               })}/>
         </div>
         <div className="text-[#0092ff] sm:text-sm lg:text-2xl text-center mb-4">
-          {progressData.consumedProtein}/500г
+          {progressData.consumedProtein}/{progressData.ProteinGoal}г
         </div>
       </div>
       
@@ -121,7 +140,7 @@ export default function ProgressTracker() {
               })}/>
         </div>
         <div className="text-[#ff0096] sm:text-sm lg:text-2xl text-center mb-4">
-          {progressData.consumedCarbs}/280г
+          {progressData.consumedCarbs}/{progressData.CarbsGoal}г
         </div>
       </div>
       
@@ -141,7 +160,7 @@ export default function ProgressTracker() {
               })}/>
         </div>
         <div className="text-[#FFC000] sm:text-sm lg:text-2xl text-center mb-4">
-          {progressData.consumedFat}/60г
+          {progressData.consumedFat}/{progressData.FatsGoal}г
         </div>
       </div>
       

@@ -12,23 +12,56 @@ export default function UpdateGoals() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    const {
+      data: { user },
+    } = await supabase.auth.getUser();
     
     try {
-      const { data, error } = await supabase.from('user_goals').insert([
-        {calorie: calories,
-          protein: protein,
-          carb: carbs,
-          fat: fats}
-      ]);
+
+      const { data, error } = await supabase
+        .from('user_goals')
+        .select('*')
+        .eq('user_id', user.id);
+
       if (error) {
-        throw error;
+        console.log(error);
       }
-      // Reset form fields after successful submission
-      setCalories('');
-      setProtein('');
-      setCarbs('');
-      setFats('');
-      console.log('Goals updated:', data);
+      if (data.length === 0) {
+        const { data: newData, error: insertError } = await supabase
+          .from('user_goals')
+          .insert([
+            {
+              calorie: calories,
+              protein: protein,
+              carb: carbs,
+              fat: fats
+            },
+          ]);
+    
+        if (insertError) {
+          console.log(insertError);
+        }
+    
+        console.log(newData);
+      } else {
+        const { data: updatedData, error: updateError } = await supabase
+          .from('user_goals')
+          .update({
+            calorie: calories,
+            protein: protein,
+            carb: carbs,
+            fat: fats
+          })
+          .eq('user_id', user.id);
+    
+        if (updateError) {
+          console.log(updateError);
+        }
+    
+        console.log('data updated', updatedData);
+      }
+      
       window.location.reload();
     } catch (error) {
       console.error('Error updating goals:', error.message);

@@ -38,9 +38,8 @@ export default async function Index() {
         </div>
       </nav>
 
-      <div className="animate-in flex-1 flex flex-col gap-20 opacity-0 max-w-4xl px-3">
-        Lorem ipsum dolor sit amet,
-        consectetur adipiscing elit...  
+      <div className="animate-in flex-1 flex flex-col gap-20 opacity-0 text-6xl max-w-4xl px-3">
+        Начни свой путь к здоровой жизни уже сегодня!  
       </div>
     </div>
   );
