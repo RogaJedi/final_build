@@ -8,7 +8,7 @@ export default function ProgressTracker() {
   const supabase = createClient();
 
   const [userStats, setUserStats] = useState(null);
-  const [userGoals, setUserGoals] = useState(0);
+  const [userGoals, setUserGoals] = useState(null);
 
   useEffect(() => {
     async function fetchUserStats() {
@@ -35,20 +35,19 @@ export default function ProgressTracker() {
         data: { user },
       } = await supabase.auth.getUser();
 
-      const { goaldata, error } = await supabase
+      const { data, error } = await supabase
         .from('user_goals')
         .select('*')
         .eq('user_id', user.id);
-
+      
+      console.log('goals:',data)
       if (error) console.error('Error fetching user stats:', error);
-      else{
-        console.log(goaldata)
-        setUserGoals(goaldata);
-      }
+      else setUserGoals(data);
     }
     
-    fetchUserStats();
+    
     fetchUserGoals();
+    fetchUserStats();
   }, []);
 
   
@@ -65,7 +64,7 @@ export default function ProgressTracker() {
     const consumedProtein = userStats.reduce((total, stat) => total + stat.protein, 0);
     const consumedCarbs = userStats.reduce((total, stat) => total + stat.carb, 0);
     const consumedFat = userStats.reduce((total, stat) => total + stat.fat, 0);
-
+    
     const progress = {
       calorie: Math.round(((consumedCalories / CaloriesGoal) * 100) * 10) / 10,
       protein: Math.round(((consumedProtein / ProteinGoal) * 100) * 10) / 10,
@@ -74,7 +73,11 @@ export default function ProgressTracker() {
       consumedCalories,
       consumedProtein,
       consumedCarbs,
-      consumedFat
+      consumedFat,
+      CaloriesGoal,
+      ProteinGoal,
+      CarbsGoal,
+      FatsGoal
     };
 
     return progress;
